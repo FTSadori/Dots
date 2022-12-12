@@ -1,0 +1,153 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="Dots_1._0v.AccountHandler">
+    <Position X="7.75" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>gAAAAABAAEAAEQABAQAAIAAAAAAAAwCCAAACAYCAAAA=</HashCode>
+      <FileName>AccountHandler.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Dots_1._0v.AccountMenu" BaseTypeListCollapsed="true">
+    <Position X="7.5" Y="7.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AQAAAAAAAAAAAAAAAJAAAAAAAQAAAAAKACAAAAAAAAA=</HashCode>
+      <FileName>AccountMenu.xaml.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="Dots_1._0v.App" Collapsed="true">
+    <Position X="6" Y="4" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>App.xaml.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Dots_1._0v.CellsField">
+    <Position X="9.25" Y="14" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAQAAIAAACAIAAACgIAAAEgAAAAAAAAAABAAAAAAAA=</HashCode>
+      <FileName>CellsField.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Dots_1._0v.CellsViewModel">
+    <Position X="5.75" Y="14.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAQAQAAAAABAAAAAAAAAAgAAQAAAAAAAAAg=</HashCode>
+      <FileName>CellsViewModel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Dots_1._0v.ColorTheme">
+    <Position X="0.5" Y="13.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>BBAIBABAAAAAAAAACIBAYAAAAIAAAAAACAAgAEAAAQA=</HashCode>
+      <FileName>ColorTheme.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Dots_1._0v.CurrentColors">
+    <Position X="4.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AIQAAEgAAAAAQBAQgABCAEAEQAAAEAAAAACAAAAAIAI=</HashCode>
+      <FileName>CurrentColors.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Dots_1._0v.Dot">
+    <Position X="2.25" Y="14.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAEAAAAAAgAABAAAAAAAAAQgAAAEAAAAAAAAA=</HashCode>
+      <FileName>Dot.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Dots_1._0v.DotsField">
+    <Position X="7.5" Y="14" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAgAABIAAACABAAACAAABAEAAAAAAAQAAABAAAAAAAA=</HashCode>
+      <FileName>DotsField.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Dots_1._0v.DotsViewModel" BaseTypeListCollapsed="true">
+    <Position X="4" Y="14" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAEgAAAAAAIABAAAAAiAAAAggAAAAAAAAAAAA=</HashCode>
+      <FileName>DotsViewModel.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="Dots_1._0v.EndWindow" BaseTypeListCollapsed="true">
+    <Position X="5.75" Y="7.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAgAAAAAAEBAAAAAAAAMA=</HashCode>
+      <FileName>EndWindow.xaml.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="Dots_1._0v.Field">
+    <Position X="11" Y="14.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAABACAACAAAAACAIAAAAAAEAACAAAAABAAAAAAAA=</HashCode>
+      <FileName>Field.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Dots_1._0v.GameWindow" BaseTypeListCollapsed="true">
+    <Position X="4" Y="7.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AASAAAAAAAAAAgABABAAAAEAAQAAIQAAACAggACAAAA=</HashCode>
+      <FileName>GameWindow.xaml.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="Dots_1._0v.InGameMenuWindow" BaseTypeListCollapsed="true">
+    <Position X="2.25" Y="10.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAgAAAAAAAAAAAAAIA=</HashCode>
+      <FileName>InGameMenuWindow.xaml.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="Dots_1._0v.LogInForm" BaseTypeListCollapsed="true">
+    <Position X="2.25" Y="7.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAIAAAAAAAAAQBAAAAAAAAAAQAAAAAAACBAAAAQAAA=</HashCode>
+      <FileName>LogInForm.xaml.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="Dots_1._0v.MainWindow" BaseTypeListCollapsed="true">
+    <Position X="0.5" Y="7.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AgQYAACAAAAACAAAAAAIAAAAAAAECAAIAAAABIIBCEA=</HashCode>
+      <FileName>MainWindow.xaml.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="Dots_1._0v.PlayerStatsWindow" BaseTypeListCollapsed="true">
+    <Position X="9.25" Y="7.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAABAAAAAAQAABoAAAACABAAAAAAA=</HashCode>
+      <FileName>PlayerStatsWindow.xaml.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="Dots_1._0v.SettingsWindow" BaseTypeListCollapsed="true">
+    <Position X="11" Y="7.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAEAAAAEAAAKAIAgABAAAAACQBAEAQACICAAAAiIAAA=</HashCode>
+      <FileName>SettingsWindow.xaml.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="Dots_1._0v.StaticSoundPlayer">
+    <Position X="6" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAgAEAQAAAAAAAAAAEAAAAgAAAAAAEABAAAKAAIAAAA=</HashCode>
+      <FileName>StaticSoundPlayer.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Interface Name="Dots_1._0v.ICloseableView">
+    <Position X="5.75" Y="10.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACAAAA=</HashCode>
+      <FileName>GameWindow.xaml.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

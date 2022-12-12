@@ -1,0 +1,274 @@
+﻿<Window x:Class="Dots_1._0v.LogInForm"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Dots_1._0v"
+        mc:Ignorable="d"
+        Title="Форма реєстрації" Height="660" Width="465" MinHeight="660" MinWidth="465"
+        Left="300" Top="100">
+
+    <Window.Resources>
+        <Style x:Key="Background">
+            <Style.Setters>
+                <Setter Property="TextBlock.Opacity" Value="0"/>
+                <Setter Property="Panel.ZIndex" Value="5"/>
+                <Setter Property="Grid.ColumnSpan" Value="3"/>
+                <Setter Property="Grid.RowSpan" Value="4"/>
+                <Setter Property="TextBlock.Foreground">
+                    <Setter.Value>
+                        <LinearGradientBrush EndPoint="0,0.5" StartPoint="1,0.5">
+                            <GradientStop Color="#FF29D2F7"/>
+                            <GradientStop Color="#FF8903F4" Offset="1"/>
+                            <GradientStop Color="#FFEA4DFF" Offset="0.528"/>
+                        </LinearGradientBrush>
+                    </Setter.Value>
+                </Setter>
+            </Style.Setters>
+        </Style>
+
+        <Style x:Key="PrettyText" TargetType="TextBlock">
+            <Style.Setters>
+                <Setter Property="TextBlock.TextAlignment" Value="Center"/>
+                <Setter Property="TextBlock.VerticalAlignment" Value="Center"/>
+                <Setter Property="TextBlock.FontFamily" Value="Century Gothic"/>
+                <Setter Property="TextBlock.FontSize" Value="32"/>
+                <Setter Property="TextBlock.Foreground">
+                    <Setter.Value>
+                        <LinearGradientBrush EndPoint="0,0.5" StartPoint="1,0.5">
+                            <GradientStop Color="#FF29D2F7"/>
+                            <GradientStop Color="#FF8903F4" Offset="1"/>
+                            <GradientStop Color="#FFEA4DFF" Offset="0.528"/>
+                        </LinearGradientBrush>
+                    </Setter.Value>
+                </Setter>
+            </Style.Setters>
+        </Style>
+
+        <Style x:Key="SmallPrettyText" BasedOn="{StaticResource PrettyText}" TargetType="TextBlock">
+            <Style.Setters>
+                <Setter Property="TextBlock.FontSize" Value="20"/>
+            </Style.Setters>
+        </Style>
+
+        <Style x:Key="LeftText" BasedOn="{StaticResource SmallPrettyText}" TargetType="TextBlock">
+            <Style.Setters>
+                <Setter Property="TextBlock.HorizontalAlignment" Value="Left"/>
+                <Setter Property="TextBlock.Margin" Value="20 0 0 0"/>
+            </Style.Setters>
+        </Style>
+
+        <Style x:Key="RightText" BasedOn="{StaticResource SmallPrettyText}" TargetType="TextBlock">
+            <Style.Setters>
+                <Setter Property="TextBlock.HorizontalAlignment" Value="Right"/>
+                <Setter Property="TextBlock.Margin" Value="0 0 20 0"/>
+            </Style.Setters>
+        </Style>
+
+
+        <LinearGradientBrush x:Key="RoundedTextBoxGrad" EndPoint="0,0.5" StartPoint="1,0.5">
+            <GradientStop Color="#FF29D2F7"/>
+            <GradientStop Color="#FF8903F4" Offset="1"/>
+            <GradientStop Color="#FFEA4DFF" Offset="0.528"/>
+        </LinearGradientBrush>
+
+        <LinearGradientBrush x:Key="ButtonBackgroundBrush" EndPoint="0,0.5" StartPoint="1,0.5">
+            <GradientStop Color="#FF74E6FF" Offset="0"/>
+            <GradientStop Color="#FFAB42FF" Offset="1"/>
+            <GradientStop Color="#FFF397FF" Offset="0.528"/>
+        </LinearGradientBrush>
+
+        <Style x:Key="RegButton" TargetType="Button" BasedOn="{StaticResource RoundedButton}">
+            <Setter Property="Background" Value="{StaticResource ButtonBackgroundBrush}"/>
+            <Setter Property="BorderBrush" Value="{StaticResource RoundedTextBoxGrad}"/>
+            <Setter Property="FontFamily" Value="Century Gothic"/>
+            <Setter Property="FontSize" Value="20"/>
+            <Setter Property="Padding" Value="1"/>
+            <Setter Property="Margin" Value="7 2 7 2"/>
+            <Setter Property="Foreground" Value="White"/>
+            <Setter Property="BorderThickness" Value="3"/>
+        </Style>
+
+        <Style TargetType="PasswordBox">
+            <Setter Property="BorderBrush" Value="Transparent"/>
+            <Setter Property="Background" Value="Transparent"/>
+            <Setter Property="Foreground" Value="{StaticResource RoundedTextBoxGrad}"/>
+            <Setter Property="TextBlock.FontFamily" Value="Century Gothic"/>
+            <Setter Property="TextBlock.FontSize" Value="20"/>
+            <Setter Property="BorderThickness" Value="0"/>
+            <Setter Property="Margin" Value="2 3 0 0"/>
+        </Style>
+        
+        <Style TargetType="TextBox">
+            <Setter Property="BorderBrush" Value="Transparent"/>
+            <Setter Property="Background" Value="Transparent"/>
+            <Setter Property="Foreground" Value="{StaticResource RoundedTextBoxGrad}"/>
+            <Setter Property="TextBlock.FontFamily" Value="Century Gothic"/>
+            <Setter Property="TextBlock.FontSize" Value="20"/>
+            <Setter Property="BorderThickness" Value="0"/>
+            <Setter Property="Margin" Value="2 3 0 0"/>
+        </Style>
+        
+        <Style x:Key="PrettyBorder" TargetType="Border">
+            <Setter Property="Margin" Value="7 2 7 2"/>
+            <Setter Property="BorderBrush" Value="{StaticResource RoundedTextBoxGrad}"/>
+            <Setter Property="BorderThickness" Value="3"/>
+            <Setter Property="CornerRadius" Value="10"/>
+        </Style>
+        
+    </Window.Resources>
+
+    <Grid Background="#FF9C59FC" Loaded="Grid_Loaded" Name="MainGrid">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="0.2*"/>
+            <ColumnDefinition/>
+            <ColumnDefinition Width="0.2*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="0.1*"/>
+            <RowDefinition/>
+            <RowDefinition Height="0*"/>
+            <RowDefinition Height="0.1*"/>
+        </Grid.RowDefinitions>
+
+        <TextBlock Panel.ZIndex="3" Name="backGlow" Grid.ColumnSpan="3" Grid.RowSpan="4">
+            <TextBlock.Background>
+                <LinearGradientBrush EndPoint="0,0.5" StartPoint="1,0.5">
+                    <GradientStop Color="#FF00EDFF" Offset="0"/>
+                    <GradientStop Color="#FF00EDFF" Offset="1"/>
+                    <GradientStop Color="#00179AA5" Offset="0.7"/>
+                    <GradientStop Color="#00179AA5" Offset="0.3"/>
+                </LinearGradientBrush>
+            </TextBlock.Background></TextBlock>
+
+        <Image Source="Images/background1.png" Stretch="Fill" Style="{DynamicResource Background}"></Image>
+        <Image Source="Images/background2.png" Stretch="Fill" Style="{DynamicResource Background}"></Image>
+        <Image Source="Images/background3.png" Stretch="Fill" Style="{DynamicResource Background}"></Image>
+
+        <Grid Grid.Column="1" Grid.Row="1" Panel.ZIndex="10" Name="RegistrationForm">
+
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="1.5*"/>
+                <RowDefinition Height="0.7*"/>
+                <RowDefinition/>
+                <RowDefinition Height="0.7*"/>
+                <RowDefinition/>
+
+                <RowDefinition Height="0.7*"/>
+                <RowDefinition/>
+                <RowDefinition Height="0.7*"/>
+                <RowDefinition/>
+
+                <RowDefinition Height="1.5*"/>
+                <RowDefinition Height="0.8*"/>
+                <RowDefinition Height="1.5*"/>
+            </Grid.RowDefinitions>
+
+            <TextBlock Grid.ColumnSpan="4" Grid.RowSpan="12" Background="White"></TextBlock>
+
+            <TextBlock Name="RegTitle" Grid.ColumnSpan="4" Style="{DynamicResource PrettyText}" Foreground="White" Panel.ZIndex="1">
+                Registration Form</TextBlock>
+            <TextBlock Grid.ColumnSpan="4">
+                <TextBlock.Background>
+                    <LinearGradientBrush EndPoint="0,0.5" StartPoint="1,0.5">
+                        <GradientStop Color="#FF29D2F7"/>
+                        <GradientStop Color="#FF8903F4" Offset="1"/>
+                        <GradientStop Color="#FFEA4DFF" Offset="0.528"/>
+                    </LinearGradientBrush>
+                </TextBlock.Background></TextBlock>
+
+            <Border Style="{DynamicResource PrettyBorder}" Grid.ColumnSpan="4" Grid.Row="2">
+                <TextBox Name="Box_Username"></TextBox>
+            </Border>
+            
+            <TextBlock Grid.Column="0" Grid.Row="1" Grid.ColumnSpan="3" Style="{DynamicResource LeftText}">Username</TextBlock>
+
+            <Border Style="{DynamicResource PrettyBorder}" Grid.ColumnSpan="4" Grid.Row="4">
+                <TextBox Name="Box_Email"></TextBox>
+            </Border>
+
+            <TextBlock Grid.Column="1" Grid.Row="3" Grid.ColumnSpan="3" Style="{DynamicResource RightText}">Email</TextBlock>
+
+            <Border Style="{DynamicResource PrettyBorder}" Grid.ColumnSpan="4" Grid.Row="6">
+                <PasswordBox Name="Box_Password" MaxLength="20"></PasswordBox>
+            </Border>
+
+            <TextBlock Grid.Column="0" Grid.Row="5" Grid.ColumnSpan="3" Style="{DynamicResource LeftText}">Password</TextBlock>
+
+            <Border Style="{DynamicResource PrettyBorder}" Grid.ColumnSpan="4" Grid.Row="8">
+                <PasswordBox Name="Box_PasswordConf" MaxLength="20"></PasswordBox>
+            </Border>
+
+            <TextBlock Grid.Column="1" Grid.Row="7" Grid.ColumnSpan="3" Style="{DynamicResource RightText}">Confirm Password</TextBlock>
+
+            <TextBlock Grid.Column="0" Grid.Row="10" Grid.ColumnSpan="4" Style="{DynamicResource SmallPrettyText}">or sign in with</TextBlock>
+
+            <Button Style="{DynamicResource RegButton}" Grid.ColumnSpan="4" Grid.Row="9"
+                    Click="SubmitButton_Click">Submit</Button>
+
+            <Button Style="{DynamicResource RegButton}" Grid.Column="1" Grid.ColumnSpan="2" Grid.Row="11"
+                    Click="SignInButton_Click">Sign In</Button>
+
+        </Grid>
+
+        <Grid Grid.Column="1" Grid.Row="2" Panel.ZIndex="10" Name="AuthorisationForm" Height="400" Width="320">
+
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="1.5*"/>
+                <RowDefinition Height="0.7*"/>
+                <RowDefinition/>
+                <RowDefinition Height="0.7*"/>
+                <RowDefinition/>
+
+                <RowDefinition Height="0.8*"/>
+                <RowDefinition Height="1.5*"/>
+
+                <RowDefinition Height="0.8*"/>
+                <RowDefinition Height="0.8*"/>
+            </Grid.RowDefinitions>
+
+            <TextBlock Grid.ColumnSpan="4" Grid.RowSpan="12" Background="White"></TextBlock>
+
+            <TextBlock Name="AutTitle" Grid.ColumnSpan="4" Style="{DynamicResource PrettyText}" Foreground="White" Panel.ZIndex="1">
+                Registration Form</TextBlock>
+            <TextBlock Grid.ColumnSpan="4">
+                <TextBlock.Background>
+                    <LinearGradientBrush EndPoint="0,0.5" StartPoint="1,0.5">
+                        <GradientStop Color="#FF29D2F7"/>
+                        <GradientStop Color="#FF8903F4" Offset="1"/>
+                        <GradientStop Color="#FFEA4DFF" Offset="0.528"/>
+                    </LinearGradientBrush>
+                </TextBlock.Background></TextBlock>
+
+            <Border Style="{DynamicResource PrettyBorder}" Grid.ColumnSpan="4" Grid.Row="2">
+                <TextBox Name="Aut_Login"></TextBox>
+            </Border>
+
+            <TextBlock Grid.Column="0" Grid.Row="1" Grid.ColumnSpan="3" Style="{DynamicResource LeftText}">Username</TextBlock>
+
+            <Border Style="{DynamicResource PrettyBorder}" Grid.ColumnSpan="4" Grid.Row="4">
+                <PasswordBox Name="Aut_Password" MaxLength="20"></PasswordBox>
+            </Border>
+
+            <TextBlock Grid.Column="1" Grid.Row="3" Grid.ColumnSpan="3" Style="{DynamicResource RightText}">Password</TextBlock>
+
+            <Button Style="{DynamicResource RegButton}" Grid.ColumnSpan="4" Grid.Row="6"
+                    Click="AutSubmitButton_Click">Submit</Button>
+
+            <Button Style="{DynamicResource RegButton}" Grid.ColumnSpan="2" Grid.Column="1" Grid.Row="8"
+                    Click="GoBackButton_Click">Go back</Button>
+        </Grid>
+    </Grid>
+</Window>

@@ -1,0 +1,133 @@
+﻿<Window x:Class="Dots_1._0v.AccountMenu"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Dots_1._0v"
+        mc:Ignorable="d"
+        Title="Меню акаунту" Height="460" Width="800" MaxHeight="460" MaxWidth="800" MinHeight="460" MinWidth="800"
+        Closing="Window_Closing" Left="200" Top="100">
+    <Window.Resources>
+        <Style x:Key="Blocks" TargetType="TextBlock">
+            <Setter Property="Height" Value="30"/>
+            <Setter Property="TextAlignment" Value="Center"/>
+            <Setter Property="FontFamily" Value="Algerian"/>
+            <Setter Property="FontSize" Value="20"/>
+            <Setter Property="Foreground" Value="{Binding Source={x:Static local:CurrentColors.GetDefaultColor}}"/>
+        </Style>
+    </Window.Resources>
+    <Grid Loaded="Grid_Loaded">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition Width="0.45*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="0.27*"/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+
+        <TextBlock Grid.RowSpan="2" Grid.ColumnSpan="2" Name="GradientBack"></TextBlock>
+        
+        <StackPanel Panel.ZIndex="5" Grid.Row="0" Grid.ColumnSpan="2" VerticalAlignment="Center" HorizontalAlignment="Center" Orientation="Horizontal">
+            <TextBlock Text="&lt;" FontSize="60" Margin="0 0 10 0" FontFamily="Algerian" Foreground="{Binding Source={x:Static local:CurrentColors.MainGBrush}}"/>
+            <TextBlock Text="{Binding Login}" 
+                   FontSize="60" FontFamily="Algerian" Foreground="{Binding Source={x:Static local:CurrentColors.MainGBrush}}"/>
+            <TextBlock Text=">" FontSize="60" Margin="10 0 0 0" FontFamily="Algerian" Foreground="{Binding Source={x:Static local:CurrentColors.MainGBrush}}"/>
+        </StackPanel>
+
+        <Border Panel.ZIndex="5" Grid.Row="1" Margin="5"
+                BorderThickness="5" BorderBrush="{Binding Source={x:Static local:CurrentColors.MainGBrush}}">
+            <StackPanel>
+                <!--<Border BorderThickness="5" BorderBrush="{Binding Source={x:Static local:CurrentColors.GetDefaultColor}}">-->
+                    <StackPanel Background="{Binding Source={x:Static local:CurrentColors.GetGridBackgroundColor}}"
+                        Orientation="Horizontal" HorizontalAlignment="Center" Margin="0 10 0 0" Width="500">
+                        <TextBlock Style="{DynamicResource Blocks}" Text="{Binding FirstsWins}" Width="0" Name="BlockF"
+                           Background="{Binding Source={x:Static local:CurrentColors.GetMainFirstPlayerColor}}"></TextBlock>
+                        <TextBlock Style="{DynamicResource Blocks}" Text="{Binding SecondsGiveUps}" Width="0" Name="BlockF_"
+                           Background="{Binding Source={x:Static local:CurrentColors.GetLightFirstPlayerColor}}"></TextBlock>
+                        <TextBlock Style="{DynamicResource Blocks}" Text="{Binding Draws}" Width="0" Name="BlockD"
+                           Background="{Binding Source={x:Static local:CurrentColors.MainGBrush}}"></TextBlock>
+                        <TextBlock Style="{DynamicResource Blocks}" Text="{Binding FirstsGiveUps}" Width="0" Name="BlockS_"
+                           Background="{Binding Source={x:Static local:CurrentColors.GetLightSecondPlayerColor}}"></TextBlock>
+                        <TextBlock Style="{DynamicResource Blocks}" Text="{Binding SecondsWins}" Width="0" Name="BlockS"
+                           Background="{Binding Source={x:Static local:CurrentColors.GetMainSecondPlayerColor}}"></TextBlock>
+                    </StackPanel>
+                <!--</Border> -->
+
+                <StackPanel Orientation="Horizontal" Margin="15">
+                    <Border BorderThickness="3" BorderBrush="{Binding Source={x:Static local:CurrentColors.GetDefaultColor}}">
+                        <TextBlock Background="{Binding Source={x:Static local:CurrentColors.GetMainFirstPlayerColor}}"
+                               Width="20" Height="20"/>
+                    </Border>
+                    <TextBlock Foreground="{Binding Source={x:Static local:CurrentColors.LightGBrush}}"
+                           FontSize="18" Margin="10 0 0 0" VerticalAlignment="Center" 
+                           FontFamily="Century">Перемоги першого гравця</TextBlock>
+                </StackPanel>
+
+                <StackPanel Orientation="Horizontal" Margin="15">
+                    <Border BorderThickness="3" BorderBrush="{Binding Source={x:Static local:CurrentColors.GetDefaultColor}}">
+                        <TextBlock Background="{Binding Source={x:Static local:CurrentColors.GetLightFirstPlayerColor}}"
+                               Width="20" Height="20"/>
+                    </Border>
+                    <TextBlock Foreground="{Binding Source={x:Static local:CurrentColors.LightGBrush}}"
+                           FontSize="18" Margin="10 0 0 0" VerticalAlignment="Center" 
+                           FontFamily="Century">Здачі другого гравця</TextBlock>
+                </StackPanel>
+
+                <StackPanel Orientation="Horizontal" Margin="15">
+                    <Border BorderThickness="3" BorderBrush="{Binding Source={x:Static local:CurrentColors.GetDefaultColor}}">
+                        <TextBlock Background="{Binding Source={x:Static local:CurrentColors.MainGBrush}}"
+                               Width="20" Height="20"/>
+                    </Border>
+                    <TextBlock Foreground="{Binding Source={x:Static local:CurrentColors.LightGBrush}}"
+                           FontSize="18" Margin="10 0 0 0" VerticalAlignment="Center" 
+                           FontFamily="Century">Нічиї</TextBlock>
+                </StackPanel>
+
+                <StackPanel Orientation="Horizontal" Margin="15">
+                    <Border BorderThickness="3" BorderBrush="{Binding Source={x:Static local:CurrentColors.GetDefaultColor}}">
+                        <TextBlock Background="{Binding Source={x:Static local:CurrentColors.GetLightSecondPlayerColor}}"
+                               Width="20" Height="20"/>
+                    </Border>
+                    <TextBlock Foreground="{Binding Source={x:Static local:CurrentColors.LightGBrush}}"
+                           FontSize="18" Margin="10 0 0 0" VerticalAlignment="Center" 
+                           FontFamily="Century">Здачі першого гравця</TextBlock>
+                </StackPanel>
+
+                <StackPanel Orientation="Horizontal" Margin="15">
+                    <Border BorderThickness="3" BorderBrush="{Binding Source={x:Static local:CurrentColors.GetDefaultColor}}">
+                        <TextBlock Background="{Binding Source={x:Static local:CurrentColors.GetMainSecondPlayerColor}}"
+                               Width="20" Height="20"/>
+                    </Border>
+                    <TextBlock Foreground="{Binding Source={x:Static local:CurrentColors.LightGBrush}}"
+                           FontSize="18" Margin="10 0 0 0" VerticalAlignment="Center" 
+                           FontFamily="Century">Перемоги другого гравця</TextBlock>
+                </StackPanel>
+            </StackPanel>
+        </Border>
+
+        <Border Panel.ZIndex="5" Grid.Row="1" Grid.Column="1" Margin="5"
+                BorderThickness="5" BorderBrush="{Binding Source={x:Static local:CurrentColors.MainGBrush}}">
+            <StackPanel>
+                <TextBlock Text="Кількість ігор:" FontFamily="Century" FontSize="25" Margin="10" 
+                           Foreground="{Binding Source={x:Static local:CurrentColors.LightGBrush}}"/>
+                <TextBlock Text="{Binding GamesNumber}" FontFamily="Century" FontSize="25" Margin="0 0 10 0" TextAlignment="Right" 
+                           Foreground="{Binding Source={x:Static local:CurrentColors.MainGBrush}}"/>
+                <TextBlock Text="Натискань на крапки:" FontFamily="Century" FontSize="19" Margin="10" 
+                           Foreground="{Binding Source={x:Static local:CurrentColors.LightGBrush}}"/>
+                <TextBlock Text="{Binding ClickedDotsNumber}" FontFamily="Century" FontSize="25" Margin="0 0 10 0" TextAlignment="Right" 
+                           Foreground="{Binding Source={x:Static local:CurrentColors.MainGBrush}}"/>
+                <Button FontFamily="Century" FontSize="23" Margin="10 75 10 5" BorderBrush="{Binding Source={x:Static local:CurrentColors.MainGBrush}}"
+                        Foreground="{Binding Source={x:Static local:CurrentColors.MainGBrush}}"
+                        Background="Transparent"
+                        Click="Back_Click">
+                    Назад</Button>
+                <Button FontFamily="Century" FontSize="23" Margin="10 10 10 5" BorderBrush="{Binding Source={x:Static local:CurrentColors.MainGBrush}}"
+                        Foreground="{Binding Source={x:Static local:CurrentColors.MainGBrush}}"
+                        Background="Transparent"
+                        Click="AccountExit_Click">
+                    Вихід з акаунту</Button>
+            </StackPanel>
+        </Border>
+    </Grid>
+</Window>

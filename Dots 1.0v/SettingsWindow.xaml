@@ -1,0 +1,130 @@
+﻿<Window x:Class="Dots_1._0v.SettingsWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Dots_1._0v"
+        mc:Ignorable="d"
+        Title="Налаштування" Height="500" Width="950" 
+        Closing="Window_Closing">
+    <Window.Resources>
+        <Style x:Key="RoundedBorder" TargetType="Border">
+            <Setter Property="BorderBrush" Value="{Binding Source={x:Static local:CurrentColors.MainGBrush}}"/>
+            <Setter Property="CornerRadius" Value="15"/>
+            <Setter Property="Width" Value="160"/>
+            <Setter Property="Height" Value="200"/>
+            <Setter Property="BorderThickness" Value="5"/>
+        </Style>
+    </Window.Resources>
+    <Grid Loaded="Grid_Loaded">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="0.25*"/>
+            <RowDefinition/>
+            <RowDefinition Height="0.2*"/>
+        </Grid.RowDefinitions>
+
+        <TextBlock Text="Settings" FontSize="60" FontFamily="Algerian"
+                   Foreground="{Binding Source={x:Static local:CurrentColors.MainGBrush}}"
+                   HorizontalAlignment="Center" Panel.ZIndex="5"/>
+
+        <TextBlock Grid.RowSpan="3" Name="GradientBack"/>
+
+        <StackPanel Grid.Row="1" Panel.ZIndex="5" 
+                    HorizontalAlignment="Center" VerticalAlignment="Center"
+                    Orientation="Horizontal">
+            <Border Style="{DynamicResource RoundedBorder}" Margin="10 0 10 0">
+            <StackPanel>
+                <TextBlock Text="Background" FontSize="22" Margin="0 9 0 0" FontFamily="Algerian" HorizontalAlignment="Center" 
+                               Foreground="{Binding Source={x:Static local:CurrentColors.MainGBrush}}"></TextBlock>
+                <TextBlock Text="Music" FontSize="20" FontFamily="Algerian" HorizontalAlignment="Center"
+                               Foreground="{Binding Source={x:Static local:CurrentColors.MainGBrush}}"></TextBlock>
+                <Button Style="{StaticResource RoundedButton}" Height="100" Width="100"
+                            BorderBrush="{Binding Source={x:Static local:CurrentColors.MainGBrush}}"
+                            Background="{Binding Source={x:Static local:CurrentColors.LightGBrush}}"
+                            Foreground="{Binding Source={x:Static local:CurrentColors.MainGBrush}}"
+                            FontSize="30"
+                            FontFamily="Algerian"
+                            Name="MusicButton"
+                            Content="{Binding MusicVolume}"
+                            Click="MusicChange_Click"></Button>
+            </StackPanel>
+            </Border>
+
+            <Border Style="{DynamicResource RoundedBorder}" Margin="10 0 10 0">
+                <StackPanel>
+                    <TextBlock Text="Sound" FontSize="30" FontFamily="Algerian" HorizontalAlignment="Center" 
+                               Foreground="{Binding Source={x:Static local:CurrentColors.MainGBrush}}"></TextBlock>
+                    <TextBlock Text="Effects" FontSize="20" FontFamily="Algerian" HorizontalAlignment="Center"
+                               Foreground="{Binding Source={x:Static local:CurrentColors.MainGBrush}}"></TextBlock>
+                    <Button Style="{StaticResource RoundedButton}" Height="100" Width="100"
+                            BorderBrush="{Binding Source={x:Static local:CurrentColors.MainGBrush}}"
+                            Background="{Binding Source={x:Static local:CurrentColors.LightGBrush}}"
+                            Foreground="{Binding Source={x:Static local:CurrentColors.MainGBrush}}"
+                            FontSize="30"
+                            FontFamily="Algerian"
+                            Name="SoundButton"
+                            Content="{Binding SoundVolume}"
+                            Click="SoundChange_Click"></Button>
+                </StackPanel>
+            </Border>
+
+            <Border Style="{DynamicResource RoundedBorder}" Height="300" Width="200" Margin="10 0 10 0">
+                <StackPanel>
+                    <TextBlock Text="Change" FontSize="30" FontFamily="Algerian" HorizontalAlignment="Center" 
+                               Foreground="{Binding Source={x:Static local:CurrentColors.MainGBrush}}"></TextBlock>
+                    <TextBlock Text="Color Theme" FontSize="20" FontFamily="Algerian" HorizontalAlignment="Center"
+                               Foreground="{Binding Source={x:Static local:CurrentColors.MainGBrush}}"></TextBlock>
+                    <Button Style="{StaticResource RoundedButton}" Height="100" Width="100"
+                            BorderBrush="{Binding Source={x:Static local:CurrentColors.MainGBrush}}"
+                            Background="{Binding Source={x:Static local:CurrentColors.LightGBrush}}"
+                            Click="ThemeChange_Click"></Button>
+                    <TextBlock Text="Current" FontSize="30" FontFamily="Algerian" HorizontalAlignment="Center" 
+                               Foreground="{Binding Source={x:Static local:CurrentColors.MainGBrush}}"></TextBlock>
+                    <TextBlock Text="↓↓↓" FontSize="30" FontFamily="Algerian" HorizontalAlignment="Center" 
+                               Foreground="{Binding Source={x:Static local:CurrentColors.MainGBrush}}"></TextBlock>
+                    <TextBlock Name="CurrentThemeName" Text="{Binding CurrentTheme}"
+                               Foreground="{Binding Source={x:Static local:CurrentColors.MainGBrush}}"
+                               FontSize="25" FontFamily="Century" HorizontalAlignment="Center"></TextBlock>
+                </StackPanel>
+            </Border>
+            
+            <Border Style="{DynamicResource RoundedBorder}" Margin="10 0 10 0">
+                    <StackPanel>
+                        <TextBlock Text="Field" FontSize="30" FontFamily="Algerian" HorizontalAlignment="Center" 
+                               Foreground="{Binding Source={x:Static local:CurrentColors.MainGBrush}}"></TextBlock>
+                        <TextBlock Text="Size" FontSize="20" FontFamily="Algerian" HorizontalAlignment="Center"
+                               Foreground="{Binding Source={x:Static local:CurrentColors.MainGBrush}}"></TextBlock>
+                        <Button Style="{StaticResource RoundedButton}" Height="100" Width="100"
+                            BorderBrush="{Binding Source={x:Static local:CurrentColors.MainGBrush}}"
+                            Background="{Binding Source={x:Static local:CurrentColors.LightGBrush}}"
+                            Foreground="{Binding Source={x:Static local:CurrentColors.MainGBrush}}"
+                            FontSize="25"
+                            FontFamily="Algerian"
+                            Name="FieldSizeButton"
+                            Content="{Binding FieldSizeString}"
+                            Click="FieldChange_Click"></Button>
+                    </StackPanel>
+                </Border>
+
+            <Border Style="{DynamicResource RoundedBorder}" Margin="10 0 10 0">
+                <StackPanel>
+                    <TextBlock Text="Invert" FontSize="30" FontFamily="Algerian" HorizontalAlignment="Center" 
+                               Foreground="{Binding Source={x:Static local:CurrentColors.MainGBrush}}"></TextBlock>
+                    <TextBlock Text="Colors" FontSize="20" FontFamily="Algerian" HorizontalAlignment="Center"
+                               Foreground="{Binding Source={x:Static local:CurrentColors.MainGBrush}}"></TextBlock>
+                    <Button Style="{StaticResource RoundedButton}" Height="100" Width="100"
+                            BorderBrush="{Binding Source={x:Static local:CurrentColors.MainGBrush}}"
+                            Background="{Binding Source={x:Static local:CurrentColors.LightGBrush}}"
+                            Click="InvertColors_Click"></Button>
+                </StackPanel>
+            </Border>
+        </StackPanel>
+
+        <Button FontFamily="Century" FontSize="23" Margin="10 10 10 5" BorderBrush="{Binding Source={x:Static local:CurrentColors.MainGBrush}}"
+                Grid.Row="2" Width="300" Height="40"
+                Foreground="{Binding Source={x:Static local:CurrentColors.MainGBrush}}"
+                Background="Transparent"
+                Click="Exit_Click">
+            Назад</Button>
+    </Grid>
+</Window>

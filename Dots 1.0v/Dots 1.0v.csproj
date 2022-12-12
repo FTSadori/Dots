@@ -1,0 +1,44 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net6.0-windows</TargetFramework>
+    <RootNamespace>Dots_1._0v</RootNamespace>
+    <Nullable>enable</Nullable>
+    <UseWPF>true</UseWPF>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="ColorThemes\**" />
+    <Compile Remove="Sounds\**" />
+    <EmbeddedResource Remove="ColorThemes\**" />
+    <EmbeddedResource Remove="Sounds\**" />
+    <None Remove="ColorThemes\**" />
+    <None Remove="Sounds\**" />
+    <Page Remove="ColorThemes\**" />
+    <Page Remove="Sounds\**" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Remove="Images\background1.png" />
+    <None Remove="Images\background2.png" />
+    <None Remove="Images\background3.png" />
+    <None Remove="Images\dots_back.png" />
+    <None Remove="Images\dots_back2.png" />
+    <None Remove="Images\dots_word.png" />
+    <None Remove="Images\dots_word_good.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="Images\background1.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Images\background2.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Images\background3.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+  </ItemGroup>
+
+</Project>
